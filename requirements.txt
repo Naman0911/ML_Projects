@@ -1,0 +1,5 @@
+pandas
+numpy
+seaborn
+# -e .              # For triggering the setup.py file
+# But this method is depreicated
