@@ -29,3 +29,12 @@ logging.basicConfig(
 # For testing the logging
 # if __name__ == "__main__":
 #     logging.info("Logging Has Started")
+
+
+# When you write:
+
+# from logger import logging
+# Executes logger.py
+# That runs logging.basicConfig(...)
+# Then gives you the configured logging object
+# Now all your logs follow your custom configuration.
