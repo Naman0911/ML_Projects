@@ -44,3 +44,36 @@ setup(
 
 
 # use pip install -e . --> For Building it as an package
+
+
+
+
+# --------------- Src (Source) Folder ---------------- 
+
+# Components folder
+# 1. Firstly we will create an components folder and inside it we will create an __.init__.py for exporting it as package later on
+#    . Components are all the modules which we are going to create such as data ingestion and etc.
+# 2. We will start with the data_ingestion.py file which will be having the code for reading the data.
+#    . Now after reading the data we will go for the validation and for the transformation of the data.
+# 3. data_tranformation.py, It is the file which will be having the code for transforming the data , like catgeorical features into numerical features , ohe etc.
+# 4. model_train.py ,It is the file which will be having the code for training the model and also for the evaluation of the model.
+
+
+#  Pipeline folder
+#    . Basically there will be 2 pipelines in our project (1) training pipeline and (2) Predicting Pipeline
+# 1. train_pipeline.py , It will be having all the code for the training process and from this file we'll try to trigger the components folder's files
+# 2. predict_pipeline.py , It will be having the code for the prediction of the test data or new data
+
+
+# logger.py file
+#    . This is the file which we keep the track of logging.
+
+
+# exception.py 
+#     . This is the file which we use to do exception handling
+
+
+# utlis.py 
+#     . This is the file in which any functiionailty which we are writing in a common way will be stored .
+#     . for ecxampke reading the code from the dastabse we need a mongo client, whose code will be written here.
+#     . Similarly the code for pushing the file to the code will be done here

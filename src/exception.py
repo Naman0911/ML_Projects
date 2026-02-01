@@ -1,6 +1,6 @@
 import sys
 # sys module provides various function and variables that are used to manipulate different parts of the Python runtime envirnoment
-from logger import logging 
+from src.logger import logging 
 
 # The function is having the 2 parameters which is the error itself and the error_detail which will be present inside the sys
 def error_message_details(error,error_detail:sys):
