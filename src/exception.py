@@ -15,8 +15,11 @@ def error_message_details(error,error_detail:sys):
     return error_message
 
 
-
-
+# You used a class because:
+# You wanted to extend built-in Exception
+# You wanted custom behavior
+# You wanted reusable structured error handling
+# That cannot be done cleanly without a class.
 # Creating an Class which is inherited from the Exception Class which is inbuilt in Python
 class CustomException(Exception):
     def __init__(self , error_message , error_detail:sys):
