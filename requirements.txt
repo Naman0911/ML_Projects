@@ -5,5 +5,6 @@ matplotlib
 scikit-learn
 catboost
 xgboost
+dill
 # -e .              # For triggering the setup.py file
 # But this method is depreicated

@@ -13,14 +13,21 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass                                        # This is basically used to create an class variables
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 
 # When we are performing the data ingestion component , there should be some inputs that may be probably required by this data ingestion components
 # The input can be like where i have to save my training path or the train data or test data or the raw data , so this kind of inputs will basically be creating in another class and this class we will mention as Data Ingestion class
 # This class is created for any input which is required for the data ingestion will give through this particular data ingestion config
 # Similary if we do data transformation we will go on and write the data transformation config cause here also we will be requiring some kind of inputs 
 
+# Self parameter explaination
+# s1.display()
+# Student.display(s1) 
 
-
+# self → receives s1
+# self.name → means s1.name
+# self.marks → means s1.marks
 
 # Inside the class if we want to define a class variables we basically use __init__
 # But if we use the decorator dataclass we can directly define our class variable
@@ -71,7 +78,7 @@ class DataIngestion:
         
 if __name__ == '__main__':
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data , test_data = obj.initiate_data_ingestion()                               # Because when we are creating an instance we are getting 2 values in return
         
 # Firstly we have read the data from suppose differnet sources we can say from clipboard or from APIs or anywhere
 # Then we converted the raw data file into a CSV file 
@@ -81,3 +88,9 @@ if __name__ == '__main__':
 
 # Donot run it while going inside the current working diretory means to the folder components then to the data_ingestion.py file it will create the folders inside the components folder because the cwd is that
 # But we want it to form under the root folder so we will do it like python\src\components\data_ingestion.py and the execute it
+    
+    
+    # Combined the data transformation
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data , test_data)
+    
