@@ -13,8 +13,12 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass                                        # This is basically used to create an class variables
+
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
+
+from src.components.model_train import ModelTrainerConfig
+from src.components.model_train import ModelTrainer
 
 # When we are performing the data ingestion component , there should be some inputs that may be probably required by this data ingestion components
 # The input can be like where i have to save my training path or the train data or test data or the raw data , so this kind of inputs will basically be creating in another class and this class we will mention as Data Ingestion class
@@ -92,5 +96,7 @@ if __name__ == '__main__':
     
     # Combined the data transformation
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data , test_data)
+    train_arr , test_arr , _= data_transformation.initiate_data_transformation(train_data , test_data)
     
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr , test_arr))
