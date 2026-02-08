@@ -38,7 +38,7 @@ class DataTransformation:
                                             ('scaler',StandardScaler(with_mean=False))])
            
            cat_pipeline = Pipeline(steps=[('imputer',SimpleImputer(strategy='most_frequent')) , 
-                                          ('OHE',OneHotEncoder())])
+                                          ('OHE',OneHotEncoder(handle_unknown='ignore'))])
            
            logging.info(f"Categorical Features: {categorical_features}")
            logging.info(f"Numerical Features: {numerical_features}")

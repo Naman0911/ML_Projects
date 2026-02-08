@@ -6,5 +6,6 @@ scikit-learn
 catboost
 xgboost
 dill
+flask
 # -e .              # For triggering the setup.py file
 # But this method is depreicated
