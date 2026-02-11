@@ -1,21 +1,21 @@
-# pandas
-# numpy
-# seaborn
-# matplotlib
-# scikit-learn
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
 # xgboost
-# dill
-# flask
-# gunicorn
+dill
+flask
+gunicorn
 # -e .              # For triggering the setup.py file
 # But this method is depreicated
 
-flask==3.0.2
-gunicorn==21.2.0
-numpy==1.26.4
-pandas==2.2.2
-seaborn==0.13.2
-matplotlib==3.8.4
-scikit-learn==1.4.2
-# xgboost==1.7.6
-dill==0.3.4
+# flask==3.0.2
+# gunicorn==21.2.0
+# numpy==1.26.4
+# pandas==2.2.2
+# seaborn==0.13.2
+# matplotlib==3.8.4
+# scikit-learn==1.4.2
+# # xgboost==1.7.6
+# dill==0.3.4
