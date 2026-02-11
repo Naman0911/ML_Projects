@@ -15,8 +15,8 @@ class PredictPipeline:
     
     def predict(self,features):
         try:
-            model_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\artifacts\model.pkl'                    # Getting the Preprocessor and the model using there path
-            preprocessor_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\artifacts\preprocessor.pkl'
+            model_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\Artifacts\model.pkl'                    # Getting the Preprocessor and the model using there path
+            preprocessor_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\Artifacts\preprocessor.pkl'
             
             model = load_object(file_path = model_path)                                                     # This function will load the pickle file 
             preprocessor = load_object(file_path = preprocessor_path)

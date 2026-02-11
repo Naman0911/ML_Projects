@@ -22,7 +22,7 @@ from src.utlis import save_object
 
 @dataclass
 class DataTransformationConfig:                                                                        # It will be giving any inputs or the paths which are required for the Data transformation component
-    preprocessor_ob_file_path: str = os.path.join('artifacts',"preprocessor.pkl")                           # It is the path of the model which are saving in a pickle file that is this File path.
+    preprocessor_ob_file_path: str = os.path.join('Artifacts',"preprocessor.pkl")                           # It is the path of the model which are saving in a pickle file that is this File path.
     
 class DataTransformation:
     def __init__(self):
