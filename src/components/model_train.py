@@ -39,7 +39,7 @@ class ModelTrainer:
                 "Random Forest Regressor" : RandomForestRegressor(),
                 "Adaboost Regressor" : AdaBoostRegressor(),
                 "Gradient Boost Regressor" : GradientBoostingRegressor(),
-                "Xgboost" : XGBRegressor()
+                # "Xgboost" : XGBRegressor()
             }
             
             params={
@@ -63,10 +63,10 @@ class ModelTrainer:
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 "Linear Regression":{},
-                "Xgboost":{
-                    'learning_rate':[.1,.01,.05,.001],
-                    'n_estimators': [8,16,32,64,128,256]
-                },
+                # "Xgboost":{
+                #     'learning_rate':[.1,.01,.05,.001],
+                #     'n_estimators': [8,16,32,64,128,256]
+                # },
                 "Adaboost Regressor":{
                     'learning_rate':[.1,.01,0.5,.001],
                     # 'loss':['linear','square','exponential'],
