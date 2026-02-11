@@ -3,9 +3,9 @@ numpy
 seaborn
 matplotlib
 scikit-learn
-catboost
 xgboost
 dill
 flask
+gunicorn
 # -e .              # For triggering the setup.py file
 # But this method is depreicated
