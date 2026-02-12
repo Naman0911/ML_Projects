@@ -37,9 +37,9 @@ from src.components.model_train import ModelTrainer
 # But if we use the decorator dataclass we can directly define our class variable
 @dataclass
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('Artifacts','train.csv')                                # The data ingestion component's output will be save the file in this path example the training data path  
-    test_data_path: str = os.path.join('Artifacts','test.csv')
-    raw_data_path: str = os.path.join('Artifacts','data.csv')
+    train_data_path: str = os.path.join('artifacts','train.csv')                                # The data ingestion component's output will be save the file in this path example the training data path  
+    test_data_path: str = os.path.join('artifacts','test.csv')
+    raw_data_path: str = os.path.join('artifacts','data.csv')
     # All this are the inputs which we are giving to the data ingestion config and now the data ingestion knows where to save the train path test part and data path
     
     

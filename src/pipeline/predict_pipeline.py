@@ -41,8 +41,8 @@ class PredictPipeline:
             )
 
             # Construct proper paths
-            model_path = os.path.join(base_dir, "Artifacts", "model.pkl")
-            preprocessor_path = os.path.join(base_dir, "Artifacts", "preprocessor.pkl")
+            model_path = os.path.join(base_dir, "artifacts", "model.pkl")
+            preprocessor_path = os.path.join(base_dir, "artifacts", "preprocessor.pkl")
 
             # Load model and preprocessor
             self.model = load_object(model_path)
