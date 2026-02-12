@@ -3,32 +3,66 @@
 
 import sys
 import pandas as pd
+import os
 
 from src.exception import CustomException
 from src.utlis import load_object
 
 
 class PredictPipeline:
+    # def __init__(self):
+    #     pass                                                     # The default constructor
+    
+    
+    # def predict(self,features):
+    #     try:
+    #         base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    #         model_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\Artifacts\model.pkl'                    # Getting the Preprocessor and the model using there path
+    #         preprocessor_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\Artifacts\preprocessor.pkl'
+            
+    #         model = load_object(file_path = model_path)                                                     # This function will load the pickle file 
+    #         preprocessor = load_object(file_path = preprocessor_path)
+            
+            
+    #         data_scaled = preprocessor.transform(features)                                                  # Transforming the data.
+    #         preds = model.predict(data_scaled)                                                              # For Predicting on the scaled data
+
+    #         return preds
+        
+    #     except Exception as e:
+    #         raise CustomException(e,sys)
     def __init__(self):
-        pass                                                     # The default constructor
-    
-    
-    def predict(self,features):
         try:
-            model_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\Artifacts\model.pkl'                    # Getting the Preprocessor and the model using there path
-            preprocessor_path = r'C:\Users\Admin\Desktop\Data Science\MLOPS\Artifacts\preprocessor.pkl'
-            
-            model = load_object(file_path = model_path)                                                     # This function will load the pickle file 
-            preprocessor = load_object(file_path = preprocessor_path)
-            
-            
-            data_scaled = preprocessor.transform(features)                                                  # Transforming the data.
-            preds = model.predict(data_scaled)                                                              # For Predicting on the scaled data
+            # Dynamically get project root directory (works on AWS + local)
+            base_dir = os.path.dirname(
+                os.path.dirname(
+                    os.path.dirname(os.path.abspath(__file__))
+                )
+            )
+
+            # Construct proper paths
+            model_path = os.path.join(base_dir, "Artifacts", "model.pkl")
+            preprocessor_path = os.path.join(base_dir, "Artifacts", "preprocessor.pkl")
+
+            # Load model and preprocessor
+            self.model = load_object(model_path)
+            self.preprocessor = load_object(preprocessor_path)
+
+        except Exception as e:
+            raise CustomException(e, sys)
+
+    def predict(self, features):
+        try:
+            # Transform input data
+            data_scaled = self.preprocessor.transform(features)
+
+            # Predict
+            preds = self.model.predict(data_scaled)
 
             return preds
-        
+
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)
         
         
         
